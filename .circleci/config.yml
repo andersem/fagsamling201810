@@ -1,12 +1,15 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - master
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:8.12.0
     working_directory: ~/repo
+
     steps:
       - checkout
-      - run: sudo npm install hexo-cli -g
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -20,8 +23,16 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: hexo generate
-      - run: git config --global user.email "dorotea.nenadovic@gmail.com"
-      - run: git config --global user.name "Dorotea Nenadovic"
-      - run: echo doracreadora.com > public/CNAME
-      - run: hexo deploy
+      - run: yarn test
+      - run: yarn run build
+      - run: git checkout --orphan gh-pages
+      - run: git rm -rf .
+      - run: rm -rf node_modules/
+      - run: mv build/* .
+      - run: git checkout master .circleci
+      - run: git config --global user.email "andersems@gmail.com"
+      - run: git config --global user.name "Anders Emil Salvesen"
+      - run: echo react.raffleit.abbsnabb.com > CNAME
+      - run: git add .
+      - run: git commit -m "Github pages"
+      - run: git push origin gh-pages --force
