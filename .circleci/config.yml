@@ -10,6 +10,7 @@ jobs:
 
     steps:
       - checkout
+      - run: sudo npm install hexo-cli -g
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -23,8 +24,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn test
-      - run: yarn run build
+      - run: hexo generate
       - run: git checkout --orphan gh-pages
       - run: git rm -rf .
       - run: rm -rf node_modules/
