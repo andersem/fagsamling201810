@@ -98,9 +98,9 @@ footer p {
     font-size: 17px;
     padding: 10px;
     background: rgba(0, 0, 0, 0.6);
-    -webkit-transform: translateY(150px);
-    -ms-transform: translateY(150px);
-    transform: translateY(150px);
+    -webkit-transform: translateY(95px);
+    -ms-transform: translateY(95px);
+    transform: translateY(95px);
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }

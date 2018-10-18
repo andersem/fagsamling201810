@@ -1,13 +1,13 @@
 <div class="text-muted">
     <div class="container">
         <div class="album">
-            <h2 id="myprojects">My projects</h2>
+            <h2">Badges</h2>
             <div class='row'>
                 <% site.pages.filter(function (page) {
-                    return page.layout === 'project'
+                    return page.layout === 'badge'
                 })
                 .each(function(post){ %>
-                <div class="col-sm-4">
+                <div class="col-sm-2">
                     <div class="card">
                         <div class="hovereffect">
                             <a href="<%= url_for(post.path) %>">
@@ -50,7 +50,7 @@
     <% } %>
 
     <div class="container">
-        <h2 id="aboutme">Who Am I?</h2>
+        <h2 id="aboutme">Mer info</h2>
         <div class="row">
             <div class="col-sm-4">
                 <% site.pages.filter(function (page) {
@@ -66,21 +66,6 @@
                 <%- markdown(page.content) %>
                 <% }) %>
             </div>
-            <div id="contact" class="col-sm-4">
-                <div class="social container" style="font-size: 2em; color: black;">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <a role="button" href="<%= config.social.instagram %>" class="btn btn-light" style="font-size: 1.2em">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                        <div class="col-sm-3">
-                            <a role="button" href="<%= config.social.ravelry %>" class="btn btn-light" style="font-size: 1.2em">
-                                <i class="fab fa-ravelry"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <% site.pages.filter(function (page) {
                     return page.path === 'contact/index.html'
                 }).each(function(page) { %>

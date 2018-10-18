@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: dora creadora
+title: Fagsamling 2018-10
 subtitle:
 description:
-author: Dorotea Nenadovic
+author: Anders Emil Salvesen
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://doracreadora.com
+url: http://abbsnabb.com/fagsamling201810
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -81,6 +81,4 @@ deploy:
   repo: git@github.com:doracreadora/doracreadora.github.io.git
 
 social:
-  instagram: https://www.instagram.com/dora_creadora/
-  pinterest: https://no.pinterest.com/doroti/
-  ravelry: https://www.ravelry.com/designers/dora-creadora
+  instagram: https://www.instagram.com/vismaconsulting
